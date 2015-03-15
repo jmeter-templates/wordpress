@@ -1,0 +1,1 @@
+%JMETER_PATH%\bin\jmeter.bat -p single-user-dev.properties -t single-user.jmx

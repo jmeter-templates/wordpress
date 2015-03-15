@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.6" jmeter="2.11 r1554548">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="service_host" elementType="Argument">
+            <stringProp name="Argument.name">service_host</stringProp>
+            <stringProp name="Argument.value">${__P(webserver,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="service_port" elementType="Argument">
+            <stringProp name="Argument.name">service_port</stringProp>
+            <stringProp name="Argument.value">${__P(service_port,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="service_protocol" elementType="Argument">
+            <stringProp name="Argument.name">service_protocol</stringProp>
+            <stringProp name="Argument.value">${__P(service_protocol,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="proxy_server" elementType="Argument">
+            <stringProp name="Argument.name">proxy_server</stringProp>
+            <stringProp name="Argument.value">${__P(proxy_server,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="proxy_port" elementType="Argument">
+            <stringProp name="Argument.name">proxy_port</stringProp>
+            <stringProp name="Argument.value">${__P(proxy_port,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="users_ramp_up_time" elementType="Argument">
+            <stringProp name="Argument.name">users_ramp_up_time</stringProp>
+            <stringProp name="Argument.value">${__P(users_ramp_up_time,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="users_hold_load_for" elementType="Argument">
+            <stringProp name="Argument.name">users_hold_load_for</stringProp>
+            <stringProp name="Argument.value">${__P(users_hold_load_for,1200)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="users_ramp_down_time" elementType="Argument">
+            <stringProp name="Argument.name">users_ramp_down_time</stringProp>
+            <stringProp name="Argument.value">${__P(users_ramp_down_time,30)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="think_time_random" elementType="Argument">
+            <stringProp name="Argument.name">think_time_random</stringProp>
+            <stringProp name="Argument.value">${__P(think_time_random,0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="think_time_constant" elementType="Argument">
+            <stringProp name="Argument.name">think_time_constant</stringProp>
+            <stringProp name="Argument.value">${__P(think_time_constant,0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="users_filename" elementType="Argument">
+            <stringProp name="Argument.name">users_filename</stringProp>
+            <stringProp name="Argument.value">${__P(users_filename,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="administrators_filename" elementType="Argument">
+            <stringProp name="Argument.name">administrators_filename</stringProp>
+            <stringProp name="Argument.value">${__P(administrators_filename,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="contributors_filename" elementType="Argument">
+            <stringProp name="Argument.name">contributors_filename</stringProp>
+            <stringProp name="Argument.value">${__P(contributors_filename,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="blogs_filename" elementType="Argument">
+            <stringProp name="Argument.name">blogs_filename</stringProp>
+            <stringProp name="Argument.value">${__P(blogs_filename,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="blog_posts_filename" elementType="Argument">
+            <stringProp name="Argument.name">blog_posts_filename</stringProp>
+            <stringProp name="Argument.value">${__P(blog_posts_filename,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="search_queries_filename" elementType="Argument">
+            <stringProp name="Argument.name">search_queries_filename</stringProp>
+            <stringProp name="Argument.value">${__P(search_queries_filename,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="tags_filename" elementType="Argument">
+            <stringProp name="Argument.name">tags_filename</stringProp>
+            <stringProp name="Argument.value">${__P(tags_filename,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="static_posts_title_filename" elementType="Argument">
+            <stringProp name="Argument.name">static_posts_title_filename</stringProp>
+            <stringProp name="Argument.value">${__P(static_posts_title_filename,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="static_posts_content_filename" elementType="Argument">
+            <stringProp name="Argument.name">static_posts_content_filename</stringProp>
+            <stringProp name="Argument.value">${__P(static_posts_content_filename,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="anonymous_ratio" elementType="Argument">
+            <stringProp name="Argument.name">anonymous_ratio</stringProp>
+            <stringProp name="Argument.value">${__P(anonymous_ratio,0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="authenticated_ratio" elementType="Argument">
+            <stringProp name="Argument.name">authenticated_ratio</stringProp>
+            <stringProp name="Argument.value">${__P(authenticated_ratio,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="homepage_rate" elementType="Argument">
+            <stringProp name="Argument.name">homepage_rate</stringProp>
+            <stringProp name="Argument.value">${__P(homepage_rate,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="viewing_blogpost_rate" elementType="Argument">
+            <stringProp name="Argument.name">viewing_blogpost_rate</stringProp>
+            <stringProp name="Argument.value">${__P(viewing_blogpost_rate,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="authenticated_create_blogpost_rate" elementType="Argument">
+            <stringProp name="Argument.name">authenticated_create_blogpost_rate</stringProp>
+            <stringProp name="Argument.value">${__P(authenticated_create_blogpost_rate,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="authenticated_like_content_rate" elementType="Argument">
+            <stringProp name="Argument.name">authenticated_like_content_rate</stringProp>
+            <stringProp name="Argument.value">${__P(authenticated_like_content_rate,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="authenticated_post_comments_rate" elementType="Argument">
+            <stringProp name="Argument.name">authenticated_post_comments_rate</stringProp>
+            <stringProp name="Argument.value">${__P(authenticated_post_comments_rate,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="rss_rate" elementType="Argument">
+            <stringProp name="Argument.name">rss_rate</stringProp>
+            <stringProp name="Argument.value">${__P(rss_rate,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="searching_content_rate" elementType="Argument">
+            <stringProp name="Argument.name">searching_content_rate</stringProp>
+            <stringProp name="Argument.value">${__P(searching_content_rate, 5)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="like_blog_post_rate" elementType="Argument">
+            <stringProp name="Argument.name">like_blog_post_rate</stringProp>
+            <stringProp name="Argument.value">${__P(like_blog_post_rate,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="like_comment_rate" elementType="Argument">
+            <stringProp name="Argument.name">like_comment_rate</stringProp>
+            <stringProp name="Argument.value">${__P(like_comment_rate,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="authenticated_relogin_percent" elementType="Argument">
+            <stringProp name="Argument.name">authenticated_relogin_percent</stringProp>
+            <stringProp name="Argument.value">${__P(authenticated_relogin_percent,0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="anonymous_session_drop_percent" elementType="Argument">
+            <stringProp name="Argument.name">anonymous_session_drop_percent</stringProp>
+            <stringProp name="Argument.value">${__P(anonymous_session_drop_percent,0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="user_state" elementType="Argument">
+            <stringProp name="Argument.name">user_state</stringProp>
+            <stringProp name="Argument.value">Anonymous</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="readonly_test" elementType="Argument">
+            <stringProp name="Argument.name">readonly_test</stringProp>
+            <stringProp name="Argument.value">${__P(readonly_test,true)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="use_impersonation" elementType="Argument">
+            <stringProp name="Argument.name">use_impersonation</stringProp>
+            <stringProp name="Argument.value">${__P(use_impersonation,false)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="last_viewed_url" elementType="Argument">
+            <stringProp name="Argument.name">last_viewed_url</stringProp>
+            <stringProp name="Argument.value">${__P(service_protocol,http)}://${__P(webserver,)}:${__P(service_port,)}/</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="http_connect_timeout" elementType="Argument">
+            <stringProp name="Argument.name">http_connect_timeout</stringProp>
+            <stringProp name="Argument.value">${__P(http_connect_timeout,0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="http_response_timeout" elementType="Argument">
+            <stringProp name="Argument.name">http_response_timeout</stringProp>
+            <stringProp name="Argument.value">${__P(http_response_timeout,0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+        <boolProp name="ResultCollector.error_logging">true</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>true</responseData>
+            <samplerData>true</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>true</responseHeaders>
+            <requestHeaders>true</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename">results/errors-detailed.jtl</stringProp>
+        <stringProp name="TestPlan.comments">This should be enabled also during a load test</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <stringProp name="TestPlan.comments">This should be disabled before starting a load test</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <stringProp name="TestPlan.comments">This should be disabled before starting a load test</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">${service_host}</stringProp>
+        <stringProp name="HTTPSampler.port">${service_port}</stringProp>
+        <stringProp name="HTTPSampler.proxyHost">${proxy_server}</stringProp>
+        <stringProp name="HTTPSampler.proxyPort">${proxy_port}</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout">${http_connect_timeout}</stringProp>
+        <stringProp name="HTTPSampler.response_timeout">${http_response_timeout}</stringProp>
+        <stringProp name="HTTPSampler.protocol">${service_protocol}</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">4</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="false">
+        <boolProp name="clearEachIteration">false</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
+      </CookieManager>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="Content-Type" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+          </elementProp>
+          <elementProp name="Accept" elementType="Header">
+            <stringProp name="Header.name">Accept</stringProp>
+            <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Accept-Encoding</stringProp>
+            <stringProp name="Header.value">gzip,deflate,sdch</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Cache-Control</stringProp>
+            <stringProp name="Header.value">max-age=0</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Connection</stringProp>
+            <stringProp name="Header.value">keep-alive</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Accept-Language</stringProp>
+            <stringProp name="Header.value">en-US,en;q=0.8,ru;q=0.6</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Referer</stringProp>
+            <stringProp name="Header.value">${last_viewed_url}</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Blogs Data Set" enabled="true">
+        <stringProp name="filename">${blogs_filename}</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">blog_relative_path</stringProp>
+        <stringProp name="delimiter">\t</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <stringProp name="TestPlan.comments">multisite is not supported yet</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Blog Posts Data Set" enabled="true">
+        <stringProp name="filename">${blog_posts_filename}</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">blogpost_title,blog_post_relative_path</stringProp>
+        <stringProp name="delimiter">\t</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Users Data Set" enabled="true">
+        <stringProp name="filename">${users_filename}</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">user_id,user_login,user_email,display_name,first_name,last_name</stringProp>
+        <stringProp name="delimiter">\t</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Administrators Data Set" enabled="true">
+        <stringProp name="filename">${administrators_filename}</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">admin_user_id,admin_user_login,admin_user_email,admin_display_name,admin_first_name,admin_last_name</stringProp>
+        <stringProp name="delimiter">\t</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Contributors Data Set" enabled="true">
+        <stringProp name="filename">${contributors_filename}</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">contributor_user_id,contributor_user_login,contributor_user_email,contributor_display_name,contributor_first_name,contributor_last_name</stringProp>
+        <stringProp name="delimiter">\t</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Posts Title Data Set" enabled="true">
+        <stringProp name="filename">${static_posts_title_filename}</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">post_title</stringProp>
+        <stringProp name="delimiter">\t</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <stringProp name="TestPlan.comments">used for creating new blog posts</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Posts Content Data Set" enabled="true">
+        <stringProp name="filename">${static_posts_content_filename}</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="variableNames">post_content</stringProp>
+        <stringProp name="delimiter">\t</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <stringProp name="TestPlan.comments">used for creating new blog posts</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Search Query Data Set" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">${search_queries_filename}</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">search_query</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Login Fragment" enabled="true"/>
+      <hashTree>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Login" enabled="true"/>
+          <hashTree>
+            <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Include Controller" enabled="true">
+              <stringProp name="IncludeController.includepath">modules/core/Login.jmx</stringProp>
+            </IncludeController>
+            <hashTree/>
+            <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think Time" enabled="true">
+              <intProp name="ActionProcessor.action">1</intProp>
+              <intProp name="ActionProcessor.target">0</intProp>
+              <stringProp name="ActionProcessor.duration">0</stringProp>
+            </TestAction>
+            <hashTree>
+              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+                <stringProp name="ConstantTimer.delay">${think_time_constant}</stringProp>
+                <stringProp name="RandomTimer.range">${think_time_random}</stringProp>
+              </UniformRandomTimer>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Remove Cookies Fragment" enabled="true">
+        <stringProp name="TestPlan.comments">remove cookies for anonymous users</stringProp>
+      </TestFragmentController>
+      <hashTree>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <stringProp name="ThroughputController.percentThroughput">${anonymous_session_drop_percent}</stringProp>
+        </ThroughputController>
+        <hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Remove Cookies" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">0</stringProp>
+          </TestAction>
+          <hashTree>
+            <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="Remove cookies" enabled="true">
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">if (vars.getObject(&quot;cm&quot;) !=null){
+	org.apache.jmeter.protocol.http.control.CookieManager cm = vars.getObject(&quot;cm&quot;);
+	//log.info(&quot;got cm&quot;);
+	while(cm.getCookieCount() &gt; 0)
+	{
+		cm.remove(0);
+	}
+}</stringProp>
+              <stringProp name="scriptLanguage">beanshell</stringProp>
+            </BSFPreProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Anonymous viewing homepage" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="1174938056">
+            <stringProp name="1272069687">${__BeanShell(Math.round(${homepage_rate} * ${anonymous_ratio}/60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="51">3</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${__BeanShell(${homepage_rate} * ${anonymous_ratio})}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Homepage" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/Homepage.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Remove Cookies" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="2124665085">Remove Cookies Fragment</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Authenticated viewing homepage" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="-372644007">
+            <stringProp name="273919541">${__BeanShell(Math.round(${homepage_rate} * ${authenticated_ratio}/60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="54">6</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${__BeanShell(${homepage_rate} * ${authenticated_ratio})}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Login" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-997701273">Login Fragment</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Homepage" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/Homepage.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Login once in a while" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <stringProp name="ThroughputController.percentThroughput">${authenticated_relogin_percent}</stringProp>
+        </ThroughputController>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="-997701273">Login Fragment</stringProp>
+              <stringProp name="662231313">Once Only Controller</stringProp>
+              <stringProp name="73596745">Login</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Anonymous viewing blogposts" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="-491720273">
+            <stringProp name="1112184257">${__BeanShell(Math.round(${viewing_blogpost_rate} * ${anonymous_ratio}/60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="57">9</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${__BeanShell(${viewing_blogpost_rate} * ${anonymous_ratio})}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="View Blog Post" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/View Blog Post.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Remove Cookies" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="2124665085">Remove Cookies Fragment</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Authenticated viewing blogposts" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="-1013893844">
+            <stringProp name="-597610305">${__BeanShell(Math.round(${viewing_blogpost_rate} * ${authenticated_ratio}/60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="1569">12</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${__BeanShell(${viewing_blogpost_rate} * ${authenticated_ratio})}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Login" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-997701273">Login Fragment</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="View Blog Post" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/View Blog Post.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Login once in a while" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <stringProp name="ThroughputController.percentThroughput">${authenticated_relogin_percent}</stringProp>
+        </ThroughputController>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="-997701273">Login Fragment</stringProp>
+              <stringProp name="662231313">Once Only Controller</stringProp>
+              <stringProp name="73596745">Login</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Anonymous searching content" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="1423290266">
+            <stringProp name="-553068447">${__BeanShell(Math.round(${searching_content_rate} * ${anonymous_ratio}/60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="1567">10</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${__BeanShell(${searching_content_rate} * ${anonymous_ratio})}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Search" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/Search.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Remove Cookies" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="2124665085">Remove Cookies Fragment</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Authenticated searching content" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="324609163">
+            <stringProp name="-1795349665">${__BeanShell(Math.round(${searching_content_rate} * ${authenticated_ratio}/60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="1573">16</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${__BeanShell(${searching_content_rate} * ${authenticated_ratio})}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Login" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-997701273">Login Fragment</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Search" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/Search.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Login once in a while" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <stringProp name="ThroughputController.percentThroughput">${authenticated_relogin_percent}</stringProp>
+        </ThroughputController>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="-997701273">Login Fragment</stringProp>
+              <stringProp name="662231313">Once Only Controller</stringProp>
+              <stringProp name="73596745">Login</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Authenticated post comments" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="1459320819">
+            <stringProp name="1844301281">${__BeanShell(Math.round(${authenticated_post_comments_rate} /60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="1572">15</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${authenticated_post_comments_rate}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Login" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-997701273">Login Fragment</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="View Blog Post" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/View Blog Post.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">${think_time_constant}</stringProp>
+            <stringProp name="RandomTimer.range">${think_time_random}</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Post Comment" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/Post Comment.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Login once in a while" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <stringProp name="ThroughputController.percentThroughput">${authenticated_relogin_percent}</stringProp>
+        </ThroughputController>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="-997701273">Login Fragment</stringProp>
+              <stringProp name="662231313">Once Only Controller</stringProp>
+              <stringProp name="73596745">Login</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Authenticated like blog post" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="-1088829813">
+            <stringProp name="-295778977">${__BeanShell(Math.round(${like_blog_post_rate} /60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="1573">16</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${like_blog_post_rate}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Login" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-997701273">Login Fragment</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="View Blog Post" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/View Blog Post.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">${think_time_constant}</stringProp>
+            <stringProp name="RandomTimer.range">${think_time_random}</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Like Blog Post" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/plugins/likes-posts-comments/Like Blog Post.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Login once in a while" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <stringProp name="ThroughputController.percentThroughput">${authenticated_relogin_percent}</stringProp>
+        </ThroughputController>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="-997701273">Login Fragment</stringProp>
+              <stringProp name="662231313">Once Only Controller</stringProp>
+              <stringProp name="73596745">Login</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Authenticated like comment" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="3942537">
+            <stringProp name="1871566429">${__BeanShell(Math.round(${like_comment_rate} /60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="1573">16</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${like_comment_rate}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Login" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-997701273">Login Fragment</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="View Blog Post" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/View Blog Post.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">${think_time_constant}</stringProp>
+            <stringProp name="RandomTimer.range">${think_time_random}</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Like Comment" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/plugins/likes-posts-comments/Like Comment.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Login once in a while" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <stringProp name="ThroughputController.percentThroughput">${authenticated_relogin_percent}</stringProp>
+        </ThroughputController>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="-997701273">Login Fragment</stringProp>
+              <stringProp name="662231313">Once Only Controller</stringProp>
+              <stringProp name="73596745">Login</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Authenticated create blog post" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="-1390679281">
+            <stringProp name="-571013713">${__BeanShell(Math.round(${authenticated_create_blogpost_rate} /60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="1575">18</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${authenticated_create_blogpost_rate}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Login every time" enabled="true"/>
+        <hashTree>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="Use contributor user" enabled="false">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="1928198645">user_login</stringProp>
+              <stringProp name="-160985414">first_name</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="-1010548747">
+                <stringProp name="-522777331">${contributor_user_login}</stringProp>
+                <stringProp name="-862973720">${contributor_first_name}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">true</boolProp>
+          </UserParameters>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="Use administrator user" enabled="true">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="1928198645">user_login</stringProp>
+              <stringProp name="-160985414">first_name</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="1068372986">
+                <stringProp name="869502017">${admin_user_login}</stringProp>
+                <stringProp name="529305628">${admin_first_name}</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">true</boolProp>
+          </UserParameters>
+          <hashTree/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Login every time" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="-997701273">Login Fragment</stringProp>
+              <stringProp name="662231313">Once Only Controller</stringProp>
+              <stringProp name="73596745">Login</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Create Blog Post" enabled="true">
+          <stringProp name="IncludeController.includepath">modules/core/Create Blog Post.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Anonymous RSS" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="-413438402">
+            <stringProp name="498211346">${__BeanShell(Math.round(${rss_rate} /60 * ((${http_connect_timeout} + ${http_response_timeout}) / 1000) + 1))}</stringProp>
+            <stringProp name="1602">24</stringProp>
+            <stringProp name="-2073630197">${users_ramp_up_time}</stringProp>
+            <stringProp name="-298668165">${users_hold_load_for}</stringProp>
+            <stringProp name="-1472576750">${users_ramp_down_time}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing Time" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <stringProp name="throughput">${rss_rate}</stringProp>
+            <intProp name="calcMode">4</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>50.0</value>
+            <savedValue>0.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="RSS Blog Entries" enabled="true">
+            <stringProp name="IncludeController.includepath">modules/core/RSS Blog Entries.jmx</stringProp>
+          </IncludeController>
+          <hashTree/>
+        </hashTree>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>50.0</value>
+            <savedValue>0.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="RSS Blog Comments" enabled="true">
+            <stringProp name="IncludeController.includepath">modules/core/RSS Blog Comments.jmx</stringProp>
+          </IncludeController>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Remove Cookies" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="2124665085">Remove Cookies Fragment</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+      <BSFPostProcessor guiclass="TestBeanGUI" testclass="BSFPostProcessor" testname="Save CookieManager to vars" enabled="true">
+        <stringProp name="TestPlan.comments">Basically is used only for anonymous thread groups but for simplicity of the script layout I leave it here</stringProp>
+        <stringProp name="filename"></stringProp>
+        <stringProp name="parameters"></stringProp>
+        <stringProp name="script">if (sampler.getClass().getSimpleName().equals(&quot;HTTPSamplerProxy&quot;) &amp;&amp; sampler.getCookieManager() != null){
+	// It is good enough to save cookie manager once per thread, as it is the same cookie manager object throughout the test, per thread.
+	if (vars.getObject(&quot;cm&quot;) == null){
+		//log.info(&quot;Saving cm&quot;);
+		vars.putObject(&quot;cm&quot;,sampler.getCookieManager());
+	}
+}</stringProp>
+        <stringProp name="scriptLanguage">beanshell</stringProp>
+      </BSFPostProcessor>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
